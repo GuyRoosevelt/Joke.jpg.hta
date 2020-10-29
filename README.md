@@ -10,7 +10,7 @@
 
 A cool little "program" made in Visual Basic Script and HTML that disables you computer and never lets you disable it. Main payloads: denial of service, hiding all your user files, changing all you user shortcuts to itself, changing your wallpaper, and blasts Rebecca Black's Friday on loop.
 
-#### Notice!
+### Notice!
 Don't rename the file! Or else it won't work!
 
 ### Read Me Before Anything!
