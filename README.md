@@ -1,4 +1,4 @@
-# Joke.jpg.hta - v1.9 - semi_lethal - super_lehmann
+# Joke.jpg.hta: v1.9 - semi_lethal - super_lehmann
 [![Issues](https://img.shields.io/github/issues/GuyRoosevelt/Joke.jpg.hta)](https://github.com/GuyRoosevelt/Joke.jpg.hta/issues)
 [![Release](https://img.shields.io/github/v/release/GuyRoosevelt/Joke.jpg.hta?include_prereleases)](https://github.com/GuyRoosevelt/Joke.jpg.hta/releases)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/GuyRoosevelt/Joke.jpg.hta/graphs/commit-activity)
@@ -17,16 +17,12 @@ I am NOT responsible for anything malicious done with this program. This is pure
 
 - to add
 
-## Repl.it 
-[![Run on Repl.it](https://repl.it/badge/github/Glank/Java-Games)](https://repl.it/@flappymagikarp/)
-
 ## Github
-[![Open on Github](https://img.shields.io/badge/Open-On%20Github-lightgrey?logo=github&style=flat)](https://github.com/GuyRoosevelt/Minecraft-Dungeons-The-Awakening)
-[![Open in Desktop](https://img.shields.io/badge/Open-With%20Github%20Desktop-green?style=flat&logo=github)](x-github-client://openRepo/https://github.com/GuyRoosevelt/Minecraft-Dungeons-The-Awakening)
-[![View in Website](https://img.shields.io/badge/View-in%20Website-blue?style=flat&logo=github)](https://guyroosevelt.github.io/Minecraft-Dungeons-The-Awakening/)
+[![Open on Github](https://img.shields.io/badge/Open-On%20Github-lightgrey?logo=github&style=flat)](https://github.com/GuyRoosevelt/Joke.jpg.hta)
+[![Open in Desktop](https://img.shields.io/badge/Open-With%20Github%20Desktop-green?style=flat&logo=github)](x-github-client://openRepo/https://github.com/GuyRoosevelt/Joke.jpg.hta)
 
 ## Downloads
-[![Download source](https://img.shields.io/badge/Download-Source-red?style=flat&logo=github)](https://github.com/GuyRoosevelt/Minecraft-Dungeons-The-Awakening/archive/master.zip)
+[![Download source](https://img.shields.io/badge/Download-Source-red?style=flat&logo=github)](https://github.com/GuyRoosevelt/Joke.jpg.hta/archive/main.zip)
 
 ## Errors:
 None!
