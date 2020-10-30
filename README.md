@@ -1,4 +1,4 @@
-# Joke.jpg.hta: v1.9 - semi_lethal - super_lehmann
+# Joke.jpg.hta: v1.9 Semi-lethal Super-Lehmann
 [![Issues](https://img.shields.io/github/issues/GuyRoosevelt/Joke.jpg.hta)](https://github.com/GuyRoosevelt/Joke.jpg.hta/issues)
 [![Release](https://img.shields.io/github/v/release/GuyRoosevelt/Joke.jpg.hta?include_prereleases)](https://github.com/GuyRoosevelt/Joke.jpg.hta/releases)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/GuyRoosevelt/Joke.jpg.hta/graphs/commit-activity)
@@ -18,7 +18,16 @@ I am NOT responsible for anything malicious done with this program. This is pure
 
 ## v1.9 - semi_lethal - super_lehmann:
 
-- to add
+- Anti deletion
+- Copying to startup
+- Anti kill process
+- Control panel, Run, regedit, cmd prompt, and task manager blocking
+- Windows defender, event viewer, computer management, and more DoS
+- Denial of service
+- Hiding all your user files
+- Changing all you user shortcuts to itself
+- Changing your wallpaper
+- Blasts Rebecca Black's Friday on loop.
 
 ## Github
 [![Open on Github](https://img.shields.io/badge/Open-On%20Github-lightgrey?logo=github&style=flat)](https://github.com/GuyRoosevelt/Joke.jpg.hta)
