@@ -20,7 +20,7 @@ Version number
 #### Semi-lethal/Lethal/Non-lethal
 How destructive the program is: Semi lethal means that some modifications are done, and does some damage, but the computer is still usable. Lethal is computer going boom boom (no more use afterwards), and non-lethal is that it doesn't do any real damage. 
 #### Conrad/Mohorovičić/Gutenberg/Super-Lehmann
-The class of the program, gaging how severe it is. Like, how fast it can spread, the lethality, so on, so forth. This program is Gutenberg class
+The class of the program, gaging how severe it is. Like, how fast it can spread, the lethality, so on, so forth. This program is Gutenberg class. BTW, this is a Darling in the Franxx reference
 
 ### Notice!
 Don't rename the file! Or else it won't work!
