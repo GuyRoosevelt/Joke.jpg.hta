@@ -28,7 +28,7 @@ Don't rename the file! Or else it won't work!
 ### Read Me Before Anything!
 I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
 
-## v1.9 - Semi-Lethal Super-Lehmann:
+## v1.9 - Semi-Lethal Gutenberg:
 
 - Anti deletion
 - Copying to startup
