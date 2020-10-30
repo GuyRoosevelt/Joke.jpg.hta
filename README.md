@@ -1,4 +1,4 @@
-# Joke.jpg.hta: v1.9 Semi-lethal Super-Lehmann
+# Joke.jpg.hta: v1.9 Semi-lethal Gutenberg
 [![Issues](https://img.shields.io/github/issues/GuyRoosevelt/Joke.jpg.hta)](https://github.com/GuyRoosevelt/Joke.jpg.hta/issues)
 [![Release](https://img.shields.io/github/v/release/GuyRoosevelt/Joke.jpg.hta?include_prereleases)](https://github.com/GuyRoosevelt/Joke.jpg.hta/releases)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/GuyRoosevelt/Joke.jpg.hta/graphs/commit-activity)
@@ -10,13 +10,25 @@
 
 A cool little "program" made in Visual Basic Script and HTML that disables you computer and never lets you disable it. Main payloads: denial of service, hiding all your user files, changing all you user shortcuts to itself, changing your wallpaper, and blasts Rebecca Black's Friday on loop.
 
+### Some info on the version names and such
+#### Trojan.VBS.Joke
+First Word: Type of malware: There are 3 different types, worms, trojans, and viruses. Worms spread through email and such, trojans don't spread but come from downloads and stuff, viruses replicate themselves.
+Second Word: Scripting language: Basically the scripting language that the program is written in.
+Third Word: Program name
+#### v(number).(number)
+Version number
+#### Semi-lethal/Lethal/Non-lethal
+How destructive the program is: Semi lethal means that some modifications are done, and does some damage, but the computer is still usable. Lethal is computer going boom boom (no more use afterwards), and non-lethal is that it doesn't do any real damage. 
+#### Conrad/Mohorovičić/Gutenberg/Super-Lehmann
+The class of the program, gaging how severe it is. Like, how fast it can spread, the lethality, so on, so forth. This program is Gutenberg class
+
 ### Notice!
 Don't rename the file! Or else it won't work!
 
 ### Read Me Before Anything!
 I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
 
-## v1.9 - semi_lethal - super_lehmann:
+## v1.9 - Semi-Lethal Super-Lehmann:
 
 - Anti deletion
 - Copying to startup
@@ -43,6 +55,6 @@ I am NOT responsible for anything malicious done with this program. This is pure
 None!
 
 ## Releases:
-Working on a release! v2 - semi_lethal - super_lehmann is going to include:
+Working on a release! v2 - semi_lethal - gutenberg is going to include:
 
 - to add
