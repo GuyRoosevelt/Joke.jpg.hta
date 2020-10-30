@@ -47,6 +47,7 @@ I am NOT responsible for anything malicious done with this program. This is pure
 ## Github
 [![Open on Github](https://img.shields.io/badge/Open-On%20Github-lightgrey?logo=github&style=flat)](https://github.com/GuyRoosevelt/Joke.jpg.hta)
 [![Open in Desktop](https://img.shields.io/badge/Open-With%20Github%20Desktop-green?style=flat&logo=github)](x-github-client://openRepo/https://github.com/GuyRoosevelt/Joke.jpg.hta)
+[![View in Website](https://img.shields.io/badge/View-in%20Website-blue?style=flat&logo=github)](https://guyroosevelt.github.io/Joke.jpg.hta/)
 
 ## Downloads
 [![Download source](https://img.shields.io/badge/Download-Source-red?style=flat&logo=github)](https://github.com/GuyRoosevelt/Joke.jpg.hta/archive/main.zip)
