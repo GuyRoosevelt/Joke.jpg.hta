@@ -28,6 +28,9 @@ I am NOT responsible for anything malicious done with this program. This is pure
 - Changing all you user shortcuts to itself
 - Changing your wallpaper
 - Blasts Rebecca Black's Friday on loop.
+- Disables internet
+- Infects USB drives with autorun
+- And some other things
 
 ## Github
 [![Open on Github](https://img.shields.io/badge/Open-On%20Github-lightgrey?logo=github&style=flat)](https://github.com/GuyRoosevelt/Joke.jpg.hta)
