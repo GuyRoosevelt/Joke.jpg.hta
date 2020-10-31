@@ -11,7 +11,7 @@
 
 ## Trojan.VBS.Joke
 
-A cool little "program" made in Visual Basic Script and HTML that disables you computer and never lets you disable it. Main payloads: denial of service, hiding all your user files, changing all you user shortcuts to itself, changing your wallpaper, and blasts Rebecca Black's Friday on loop.
+A cool little "program" made in Visual Basic Script and HTML that disables you computer and never lets you kill it. Main payloads: denial of service, hiding all your user files, changing all you user shortcuts to itself, changing your wallpaper, and blasts Rebecca Black's Friday on loop.
 
 ### Some info on the version names and such
 #### Trojan.VBS.Joke
