@@ -28,7 +28,7 @@ How destructive the program is: Semi lethal means that some modifications are do
 The class of the program, gaging how severe it is. Like, how fast it can spread, the lethality, so on, so forth. This program is Gutenberg class. BTW, this is a Darling in the Franxx reference
 
 ### Notice!
-Don't rename the file! Or else it won't work!
+Don't rename the file! Or else it won't work! Best used on a virtual machine with NO networking and with administrator rights (although this is optional, it is recommended for all the features to work.)
 
 ## v1.9 - Semi-Lethal Gutenberg:
 
