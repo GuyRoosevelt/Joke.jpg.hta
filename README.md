@@ -12,9 +12,11 @@ A cool little "program" made in Visual Basic Script and HTML that disables you c
 
 ### Some info on the version names and such
 #### Trojan.VBS.Joke
-First Word: Type of malware: There are 3 different types, worms, trojans, and viruses. Worms spread through email and such, trojans don't spread but come from downloads and stuff, viruses replicate themselves.
-Second Word: Scripting language: Basically the scripting language that the program is written in.
-Third Word: Program name
+First Word: Type of malware (Worm, Trojan, Virus): There are 3 different types, worms, trojans, and viruses. Worms spread through email and such, trojans don't spread but come from downloads and stuff, viruses replicate themselves.
+
+Second Word (VBS, JScript, HTML, C#, etc.): Scripting language: Basically the scripting language that the program is written in.
+
+Third Word (Whatever the program is named): Program name
 #### v(number).(number)
 Version number
 #### Semi-lethal/Lethal/Non-lethal
