@@ -6,6 +6,9 @@
 [![made-with-vbs-and-html](https://img.shields.io/badge/Made%20With-VBS%20and%20HTML-blue)](https://en.wikipedia.org/wiki/VBScript)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FGuyRoosevelt%2FJoke.jpg.hta)](https://twitter.com/GuyRoosevelt1)
 
+# Read Me Before Anything!
+## I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
+
 ## Trojan.VBS.Joke
 
 A cool little "program" made in Visual Basic Script and HTML that disables you computer and never lets you disable it. Main payloads: denial of service, hiding all your user files, changing all you user shortcuts to itself, changing your wallpaper, and blasts Rebecca Black's Friday on loop.
@@ -26,9 +29,6 @@ The class of the program, gaging how severe it is. Like, how fast it can spread,
 
 ### Notice!
 Don't rename the file! Or else it won't work!
-
-### Read Me Before Anything!
-I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
 
 ## v1.9 - Semi-Lethal Gutenberg:
 
