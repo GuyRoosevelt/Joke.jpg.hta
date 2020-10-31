@@ -7,7 +7,7 @@
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FGuyRoosevelt%2FJoke.jpg.hta)](https://twitter.com/GuyRoosevelt1)
 
 # Read Me Before Anything!
-## I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
+### I am NOT responsible for anything malicious done with this program. This is purely for education only. I am not going to be held accountable for any damage done. Reading the source code or downloading the program means that you agree with this disclaimer. Only run this program in a virtual machine with NO networking. This program belongs to me.
 
 ## Trojan.VBS.Joke
 
