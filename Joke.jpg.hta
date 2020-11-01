@@ -67,7 +67,7 @@
     	Rem read file
     	If objFile.Size <= 0 then
 			Set objFile = fso.OpenTextFile("syslog.log")
-			objFile.Write "timestamp 45 valid. antivirus software has cleaned of any threats. computer is safe and under watch."
+			objFile.Write "timestamp 45 valid. antivirus software has cleaned all threats currently on this machine. computer is safe and under watch."
 			objFile.Close
 			Set objFile = Nothing
 			Return = WshShell.Run("Joke.jpg.hta", 0, false)
