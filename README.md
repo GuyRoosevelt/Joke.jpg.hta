@@ -55,7 +55,7 @@ Don't rename the file! Or else it won't work! Best used on a virtual machine wit
 [![Download source](https://img.shields.io/badge/Download-Source-red?style=flat&logo=github)](https://github.com/GuyRoosevelt/Joke.jpg.hta/archive/main.zip)
 
 ## Errors:
-None!
+On line 56, permission is denied. The object cannot be opened when the object is already running.
 
 ## Releases:
 Working on a release! v2 - semi_lethal - gutenberg is going to include:
