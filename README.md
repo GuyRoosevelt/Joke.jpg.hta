@@ -60,4 +60,11 @@ On line 56, permission is denied. The object cannot be opened when the object is
 ## Releases:
 Working on a release! v2 - semi_lethal - gutenberg is going to include:
 
-- to add
+- Some bug fixes
+- Downloading required files instead of using the internet
+- Bat dropping and PIF dropping
+- Pirch, mirc, and virc spreading
+- Kazaa spreading
+- Some other spreading methods
+- VBS and JScript infecting by making them redirect to the Joke's location in the startup folder
+- Maybe some other bits and bobs
