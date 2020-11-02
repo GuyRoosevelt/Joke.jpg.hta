@@ -3,8 +3,8 @@
 [![Release](https://img.shields.io/github/v/release/GuyRoosevelt/Joke.jpg.hta?include_prereleases)](https://github.com/GuyRoosevelt/Joke.jpg.hta/releases)
 [![Maintenance](https://img.shields.io/maintenance/yes/2020)](https://github.com/GuyRoosevelt/Joke.jpg.hta/graphs/commit-activity)
 [![License](https://img.shields.io/github/license/GuyRoosevelt/Joke.jpg.hta)](https://github.com/GuyRoosevelt/Joke.jpg.hta/blob/main/LICENSE)
-[![made-with-vbs-and-html](https://img.shields.io/badge/Made%20With-VBS%20and%20HTML-blue)](https://en.wikipedia.org/wiki/VBScript)
 [![Downloads](https://img.shields.io/github/downloads/GuyRoosevelt/Joke.jpg.hta/total)](https://github.com/GuyRoosevelt/Joke.jpg.hta/releases/latest)
+[![made-with-vbs-and-html](https://img.shields.io/badge/Made%20With-VBS%20and%20HTML-blue)](https://en.wikipedia.org/wiki/VBScript)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FGuyRoosevelt%2FJoke.jpg.hta)](https://twitter.com/GuyRoosevelt1)
 
 # Read Me Before Anything!
